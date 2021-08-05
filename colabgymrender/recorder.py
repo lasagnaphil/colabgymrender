@@ -6,11 +6,12 @@ import gym
 import os
 
 class Recorder(gym.Wrapper):
-    def __init__(self, env, directory, auto_release=True, size=None, fps=None):
+    def __init__(self, env, directory, auto_release=True, size=None, fps=None, fourcc_format='mp4v'):
         super(Recorder, self).__init__(env)
         self.directory = directory
         self.auto_release = auto_release
         self.active = True
+        self.fourcc_format = fourcc_format
 
         if not os.path.exists(self.directory):
             os.mkdir(self.directory)
@@ -38,7 +39,7 @@ class Recorder(gym.Wrapper):
     def _start(self):
         self.cliptime = time.time()
         self.path = f'{self.directory}/{self.cliptime}.mp4'
-        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+        fourcc = cv2.VideoWriter_fourcc(*self.fourcc_format)
         self._writer = cv2.VideoWriter(self.path, fourcc, self.fps, self.size)
 
     def _write(self):
