@@ -38,7 +38,7 @@ class Recorder(gym.Wrapper):
     def _start(self):
         self.cliptime = time.time()
         self.path = f'{self.directory}/{self.cliptime}.mp4'
-        fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         self._writer = cv2.VideoWriter(self.path, fourcc, self.fps, self.size)
 
     def _write(self):
