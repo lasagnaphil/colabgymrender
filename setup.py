@@ -11,8 +11,8 @@ setup(
   description = 'A wrapper for rendering OpenAI Gym environments in Google Colab',
   author = 'Ryan Rudes',
   author_email = 'ryanrudes@gmail.com',
-  url = 'https://github.com/Ryan-Rudes/colabgymrender',
-  download_url = 'https://github.com/Ryan-Rudes/colabgymrender/archive/v1.0.9.tar.gz',
+  url = 'https://github.com/lasagnaphil/colabgymrender',
+  download_url = 'https://github.com/lasagnaphil/colabgymrender/archive/v1.0.10.tar.gz',
   keywords = ['colab', 'gym', 'render', 'openai'],
   install_requires=['moviepy'],
   classifiers=[
